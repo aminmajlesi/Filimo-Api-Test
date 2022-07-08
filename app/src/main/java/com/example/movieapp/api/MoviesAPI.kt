@@ -6,12 +6,12 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface MoviesAPI {
-    @GET("v2/top-headlines")
+    @GET("/api/en/v1/movie/movie/list/tagid/1000300/text/simple/sug/on")
     suspend fun getMoviesList(
 
     ): Response<MoviesResponse>
 
-    @GET("v2/everything")
+    @GET("v1/everything")
     suspend fun searchForMovies(
         @Query("q")
         searchQuery: String

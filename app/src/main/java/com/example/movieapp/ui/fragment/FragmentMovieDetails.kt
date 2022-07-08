@@ -7,6 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.movieapp.R
 
-class FragmentMovieDetails : Fragment(R.layout.fragment_movie_details) {
+class FragmentMovieDetails : Fragment() {
 
 }
