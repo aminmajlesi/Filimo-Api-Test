@@ -104,11 +104,11 @@ class MoviesViewModel(
 
 
     val breakingNews: MutableLiveData<Resource<MoviesResponse>> = MutableLiveData()
-    var breakingNewsPage = 1
+    //var breakingNewsPage = 1
     var breakingNewsResponse: MoviesResponse? = null
 
     val searchNews: MutableLiveData<Resource<MoviesResponse>> = MutableLiveData()
-    var searchNewsPage = 1
+    //var searchNewsPage = 1
     var searchNewsResponse: MoviesResponse? = null
     var newSearchQuery:String? = null
     var oldSearchQuery:String? = null
@@ -127,39 +127,58 @@ class MoviesViewModel(
     }
 
     private fun handleMoviesListResponse(response: Response<MoviesResponse>) : Resource<MoviesResponse> {
+//        if(response.isSuccessful) {
+//            response.body()?.let { resultResponse ->
+//                //breakingNewsPage++
+//                if(breakingNewsResponse == null) {
+//                    breakingNewsResponse = resultResponse
+//                } else {
+//                    val oldArticles = breakingNewsResponse?.data
+//                    val newArticles = resultResponse.data
+//                    oldArticles?.addAll(newArticles)
+//                }
+//                return Resource.Success(breakingNewsResponse ?: resultResponse)
+//            }
+//        }
+//        return Resource.Error(response.message())
+
+
         if(response.isSuccessful) {
             response.body()?.let { resultResponse ->
-                breakingNewsPage++
-                if(breakingNewsResponse == null) {
-                    breakingNewsResponse = resultResponse
-                } else {
-                    val oldArticles = breakingNewsResponse?.data
-                    val newArticles = resultResponse.data
-                    oldArticles?.addAll(newArticles)
-                }
-                return Resource.Success(breakingNewsResponse ?: resultResponse)
+                return Resource.Success(resultResponse)
             }
         }
         return Resource.Error(response.message())
+
     }
 
     private fun handleSearchNewsResponse(response: Response<MoviesResponse>) : Resource<MoviesResponse> {
+//        if(response.isSuccessful) {
+//            response.body()?.let { resultResponse ->
+//                if(searchNewsResponse == null || newSearchQuery != oldSearchQuery) {
+//                    //searchNewsPage = 1
+//                    oldSearchQuery = newSearchQuery
+//                    searchNewsResponse = resultResponse
+//                } else {
+//                    //searchNewsPage++
+//                    val oldArticles = searchNewsResponse?.data
+//                    val newArticles = resultResponse.data
+//                    oldArticles?.addAll(newArticles)
+//                }
+//                return Resource.Success(searchNewsResponse ?: resultResponse)
+//            }
+//        }
+//        return Resource.Error(response.message())
+
+
         if(response.isSuccessful) {
             response.body()?.let { resultResponse ->
-                if(searchNewsResponse == null || newSearchQuery != oldSearchQuery) {
-                    searchNewsPage = 1
-                    oldSearchQuery = newSearchQuery
-                    searchNewsResponse = resultResponse
-                } else {
-                    searchNewsPage++
-                    val oldArticles = searchNewsResponse?.data
-                    val newArticles = resultResponse.data
-                    oldArticles?.addAll(newArticles)
-                }
-                return Resource.Success(searchNewsResponse ?: resultResponse)
+                return Resource.Success(resultResponse)
             }
         }
         return Resource.Error(response.message())
+
+
     }
 
     private suspend fun safeSearchMoviesCall(searchQuery: String) {

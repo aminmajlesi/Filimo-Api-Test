@@ -6,7 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface MoviesAPI {
-    @GET("/api/en/v1/movie/movie/list/tagid/1000300/text/simple/sug/on")
+    @GET("api/en/v1/movie/movie/list/tagid/1000300/text/simple/sug/on")
     suspend fun getMoviesList(
 
     ): Response<MoviesResponse>

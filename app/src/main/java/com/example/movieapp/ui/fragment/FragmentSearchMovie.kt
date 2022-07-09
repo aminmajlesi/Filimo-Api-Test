@@ -88,20 +88,11 @@ class FragmentSearchMovie : Fragment(R.layout.fragment_search_movie) {
 
     private fun hideProgressBar() {
         paginationProgressBar.visibility = View.INVISIBLE
-        isLoading = false
     }
 
     private fun showProgressBar() {
         paginationProgressBar.visibility = View.VISIBLE
-        isLoading = true
     }
-
-
-
-
-    var isLoading = false
-
-
 
     private fun setupRecyclerView() {
         newsAdapter = MoviesAdapter()
