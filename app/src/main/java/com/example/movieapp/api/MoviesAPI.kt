@@ -11,9 +11,9 @@ interface MoviesAPI {
 
     ): Response<MoviesResponse>
 
-    @GET("v1/everything")
+    @GET("api/en/v1/movie/movie/list/tagid/1000300/text/{Query}/sug/on")
     suspend fun searchForMovies(
-        @Query("q")
+        @Query("Query")
         searchQuery: String
     ): Response<MoviesResponse>
 }

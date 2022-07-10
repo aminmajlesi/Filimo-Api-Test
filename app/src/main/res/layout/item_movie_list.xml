@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/ivMovieImage"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:scaleType="centerCrop"
         android:src="@drawable/ic_launcher_background"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,6 +27,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/ivMovieImage"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tvEnglishTitle"
         app:layout_constraintTop_toTopOf="@+id/ivMovieImage" />
 
 
@@ -34,7 +35,6 @@
         android:id="@+id/tvEnglishTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="10dp"
         android:gravity="right"
         android:text="TITLE"
@@ -42,7 +42,37 @@
         android:textSize="12sp"
         app:layout_constraintEnd_toStartOf="@+id/ivMovieImage"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvFarsiTitle" />
+        app:layout_constraintBottom_toBottomOf="@+id/ivMovieImage"
+        app:layout_constraintTop_toTopOf="@+id/ivMovieImage" />
+
+    <TextView
+        android:id="@+id/tvImdbRateTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:gravity="right"
+        android:text="امتیاز IMDB :"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/ivMovieImage"
+        app:layout_constraintBottom_toBottomOf="@+id/ivMovieImage"
+        app:layout_constraintTop_toBottomOf="@+id/tvEnglishTitle" />
+
+
+
+    <TextView
+        android:id="@+id/tvImdbRate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:gravity="right"
+        android:text="Rate"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/tvImdbRateTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/ivMovieImage"
+        app:layout_constraintTop_toBottomOf="@+id/tvEnglishTitle" />
 
     <TextView
         android:id="@+id/tvDescription"
@@ -58,5 +88,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivMovieImage" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvDescription"
+        app:layout_constraintStart_toStartOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

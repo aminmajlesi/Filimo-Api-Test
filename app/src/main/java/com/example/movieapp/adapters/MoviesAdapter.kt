@@ -44,6 +44,7 @@ class MoviesAdapter : RecyclerView.Adapter<MoviesAdapter.MoviesViewHolder>(){
             tvFarsiTitle.text = movie.attributes.movie_title
             tvEnglishTitle.text = movie.attributes.movie_title_en
             tvDescription.text = movie.attributes.descr
+            tvImdbRate.text = movie.attributes.imdb_rate
 
             setOnClickListener {
                 onItemClickListener?.let { it(movie) }

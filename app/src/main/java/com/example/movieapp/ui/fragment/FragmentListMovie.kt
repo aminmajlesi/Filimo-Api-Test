@@ -21,7 +21,6 @@ import kotlinx.android.synthetic.main.fragment_list_movie.*
 
 class FragmentListMovie : Fragment(R.layout.fragment_list_movie) {
 
-    private lateinit var binding: FragmentListMovieBinding
     lateinit var viewModel: MoviesViewModel
     lateinit var moviesAdapter: MoviesAdapter
     var isLoading = false
@@ -45,7 +44,7 @@ class FragmentListMovie : Fragment(R.layout.fragment_list_movie) {
         setupRecyclerView()
 
 
-        viewModel.breakingNews.observe(viewLifecycleOwner, Observer { response ->
+        viewModel.listMovies.observe(viewLifecycleOwner, Observer { response ->
             when(response) {
                 is Resource.Success -> {
                     hideProgressBar()

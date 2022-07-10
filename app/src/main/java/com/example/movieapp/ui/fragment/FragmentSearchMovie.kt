@@ -32,7 +32,6 @@ import kotlinx.coroutines.launch
 
 class FragmentSearchMovie : Fragment(R.layout.fragment_search_movie) {
 
-    private lateinit var binding: FragmentSearchMovieBinding
     lateinit var viewModel: MoviesViewModel
     lateinit var newsAdapter: MoviesAdapter
     val TAG = "FragmentSearchMovie"
@@ -63,7 +62,7 @@ class FragmentSearchMovie : Fragment(R.layout.fragment_search_movie) {
             }
         }
 
-        viewModel.searchNews.observe(viewLifecycleOwner, Observer { response ->
+        viewModel.searchMovies.observe(viewLifecycleOwner, Observer { response ->
             when(response) {
                 is Resource.Success -> {
                     hideProgressBar()
