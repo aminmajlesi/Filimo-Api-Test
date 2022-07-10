@@ -9,13 +9,13 @@ import com.example.movieapp.R
 import com.example.movieapp.databinding.ActivityMainBinding
 import com.example.movieapp.repository.MoviesRepository
 import kotlinx.android.synthetic.main.activity_main.*
-
+/**
+ * Author By Amin Majlesi
+ */
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-
     lateinit var viewModel: MoviesViewModel
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

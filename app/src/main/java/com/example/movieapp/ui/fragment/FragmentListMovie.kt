@@ -19,6 +19,10 @@ import com.example.movieapp.ui.MoviesViewModelProviderFactory
 import com.example.movieapp.util.Resource
 import kotlinx.android.synthetic.main.fragment_list_movie.*
 
+/**
+ * Author By Amin Majlesi
+ * This Fragment is just for test of list movies
+ */
 class FragmentListMovie : Fragment(R.layout.fragment_list_movie) {
 
     lateinit var viewModel: MoviesViewModel

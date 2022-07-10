@@ -29,11 +29,13 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-
+/**
+ * Author By Amin Majlesi
+ */
 class FragmentSearchMovie : Fragment(R.layout.fragment_search_movie) {
 
     lateinit var viewModel: MoviesViewModel
-    lateinit var newsAdapter: MoviesAdapter
+    lateinit var moviesAdapter: MoviesAdapter
     val TAG = "FragmentSearchMovie"
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -67,8 +69,7 @@ class FragmentSearchMovie : Fragment(R.layout.fragment_search_movie) {
                 is Resource.Success -> {
                     hideProgressBar()
                     response.data?.let { newsResponse ->
-                        newsAdapter.differ.submitList(newsResponse.data.toList())
-
+                        moviesAdapter.differ.submitList(newsResponse.data.toList())
                     }
                 }
                 is Resource.Error -> {
@@ -94,9 +95,9 @@ class FragmentSearchMovie : Fragment(R.layout.fragment_search_movie) {
     }
 
     private fun setupRecyclerView() {
-        newsAdapter = MoviesAdapter()
+        moviesAdapter = MoviesAdapter()
         rvSearchMovies.apply {
-            adapter = newsAdapter
+            adapter = moviesAdapter
             layoutManager = LinearLayoutManager(activity)
 
         }

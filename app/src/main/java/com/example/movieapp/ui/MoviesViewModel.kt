@@ -25,17 +25,15 @@ class MoviesViewModel(
 ) : AndroidViewModel(app) {
 
     val listMovies: MutableLiveData<Resource<MoviesResponse>> = MutableLiveData()
-
     val searchMovies: MutableLiveData<Resource<MoviesResponse>> = MutableLiveData()
-    var searchMoviesResponse: MoviesResponse? = null
     var newSearchQuery:String? = null
-    var oldSearchQuery:String? = null
-
 
     init {
-        getMoviesList()
+        //testing movies list
+        //getMoviesList()
     }
 
+    //testing movies list
     fun getMoviesList() = viewModelScope.launch {
         safeMoviesListCall()
     }

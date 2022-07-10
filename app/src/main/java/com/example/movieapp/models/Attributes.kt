@@ -24,7 +24,7 @@ data class Attributes(
     val movie_title: String,
     val movie_title_en: String,
 //    val output_type: String,
-    val pic: Pic,
+    val pic: Pic
 //    val position: Int,
 //    val pro_year: String,
 //    val publish_date: String,
@@ -34,7 +34,7 @@ data class Attributes(
 //    val serial: Serial,
 //    val sid: Int,
 //    val subtitle: Subtitle,
-    val tag_id: Any
+//    val tag_id: Any
 //    val theme: String,
 //    val uid: String,
 //    val uuid: String,
