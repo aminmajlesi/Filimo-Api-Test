@@ -7,3 +7,7 @@ It is developed by Kotlin and used technologies like :
 * Navigation bottom
 * Glide
 
+
+## Screenshots:
+
+
