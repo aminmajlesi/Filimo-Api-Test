@@ -1,4 +1,9 @@
-# MovieApp
-This project has searchable to filimo Api.
-This project is developed by Kotlin and used technologies like MVVM , Retrofit , Coroutines , Navigation bottom , ...
-And the version control is Git . 
+# MVVM Filimo Search Movie Api
+This project has searchable Movies to Filimo Api.
+It is developed by Kotlin and used technologies like :
+*MVVM 
+*Retrofit
+*Coroutines 
+*Navigation bottom
+*Glide
+
